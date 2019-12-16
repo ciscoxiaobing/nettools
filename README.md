@@ -35,8 +35,8 @@ apt install hping3
 ```
 
 ### 使用 MakeCert 为点到站点连接生成并导出证书
-[MakeCert](https://docs.microsoft.com/zh-cn/windows/win32/seccrypto/makecert?redirectedfrom=MSDN)
-[of](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert)
+[MakeCert](https://docs.microsoft.com/zh-cn/windows/win32/seccrypto/makecert?redirectedfrom=MSDN)  
+[of](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert)  
 1. 生成Root证书
 ``` cmd
  .\makecert.exe -sky exchange -r -n "CN=P2SRoot2012Cert" -pe -a sha256 -len 2048 -ss My
