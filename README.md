@@ -57,7 +57,7 @@ reg add HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13 /v TlsVersion /
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp" /v DefaultSecureProtocols /t REG_DWORD /d 0xaa0
 if %PROCESSOR_ARCHITECTURE% EQU AMD64 reg add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp" /v DefaultSecureProtocols /t REG_DWORD /d 0xaa0
 ```
-3. 根据使用的系统版本安装以下更新:
+3. 根据使用的系统版本安装以下更新:  
 [KB3140245](https://www.catalog.update.microsoft.com/search.aspx?q=kb3140245)  
 [KB2977292](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2977292)
 
