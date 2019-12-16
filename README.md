@@ -34,6 +34,18 @@ tcpping 20.0.0.9:80
 apt install hping3
 ```
 
+### 使用 MakeCert 为点到站点连接生成并导出证书
+[MakeCert](https://docs.microsoft.com/zh-cn/windows/win32/seccrypto/makecert?redirectedfrom=MSDN)
+[of](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert)
+1. 生成Root证书
+``` cmd
+ .\makecert.exe -sky exchange -r -n "CN=P2SRoot2012Cert" -pe -a sha256 -len 2048 -ss My
+```
+
+2. 生成客户端证书
+``` cmd
+ .\makecert.exe -n "CN=P2S2012ChildCert" -pe -sky exchange -m 96 -ss My -in "P2SRoot2012Cert" -is my -a sha256
+```
 ### Azure VPN Windows Server 2012 R2 以下 812连接报错
 [关于点到站点 VPN](https://docs.azure.cn/zh-cn/vpn-gateway/point-to-site-about#tls1)
 [如何在 Windows 7 和 Windows 8.1 中启用对 TLS 1.2 的支持？](https://docs.azure.cn/zh-cn/vpn-gateway/point-to-site-about#tls1)
